@@ -7,7 +7,8 @@
 // output: [ 'This', 'is', 'a', 'split', 'sentence.']
 
 function stringBreaker(str) {
-  // TODO YOUR CODE HERE
+let out = str.split(' ')
+return out
 }
 
 
@@ -18,7 +19,10 @@ function stringBreaker(str) {
 // output: ['is', 'a', 'split', 'sentence.', 'This']
 
 function rearranger(arr) {
-  // TODO YOUR CODE HERE
+  console.log(arr, 'beginning array')
+  arr.push(arr.shift())
+  console.log(arr, 'end array')
+  return arr
 }
 
 
@@ -29,7 +33,8 @@ function rearranger(arr) {
 // input: ['This', 'is', 'a', 'split', 'sentence.']
 // output: ['sentence.', 'This', 'is', 'a', 'split' ]
 function reverseRearranger(arr) {
-  // TODO YOUR CODE HERE
+  arr.unshift(arr.pop());
+  return arr
 }
 
 
@@ -39,7 +44,11 @@ function reverseRearranger(arr) {
 // input: ['This', 'is', 'a', 'split', 'sentence.'] , 1, 3
 // output: ['is', 'a', 'split']
 function arrayPortion(arr, start, end) {
-  // TODO YOUR CODE HERE
+arr.shift(start)
+arr.shift(start)
+arr.pop(end)
+arr.pop(end)
+  return arr
 }
 
 // Final step we have the message broken up into words, we need to put it back into a normal sentence
@@ -49,5 +58,7 @@ function arrayPortion(arr, start, end) {
 // output: 'This is a split sentence.'
 
 function arrayToString(arr) {
-  // TODO YOUR CODE HERE
+  let string = arr.join(" ")
+  console.log(string)
+  return string
 }

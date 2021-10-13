@@ -26,7 +26,10 @@
 */
 
 function platesByCharacters(arr) {
-  // TODO YOUR CODE HERE
+ for(let i = 0; i < arr.length; i++){
+   const out = arr.filter(arr => arr.length > 6 && arr.length < 8)
+    return out
+ }
 }
 
 // --------------------------------
@@ -57,7 +60,8 @@ function platesByCharacters(arr) {
 */
 
 function filterPlatesByCitations(plates, numberOfCitations) {
-  // TODO YOUR CODE HERE
+  let found = plates.filter(p => p.citations >= numberOfCitations)
+  return found
 }
 
 // --------------------------------
@@ -70,7 +74,8 @@ function filterPlatesByCitations(plates, numberOfCitations) {
 // output: ['ETMYDST','GETAWAY','NOTMINE']
 
 function sortPlates(arr) {
-  // TODO YOUR CODE HERE
+  arr.sort() 
+    return arr
 }
 
 // --------------------------------
@@ -98,7 +103,10 @@ function sortPlates(arr) {
 */
 
 function sortPlatesByCitations(arr) {
-  // TODO YOUR CODE HERE
+  return arr.sort((a, b) => {
+    return b.citations - a.citations
+  })
+  
 }
 
 // --------------------------------
@@ -127,5 +135,6 @@ function sortPlatesByCitations(arr) {
 */
 
 function sortPlatesByCountry(arr) {
-  // TODO YOUR CODE HERE
+ return arr.sort((a, b) => {
+   return a.country.localeCompare(b.country) }) 
 }

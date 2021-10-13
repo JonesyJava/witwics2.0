@@ -12,7 +12,11 @@
 // Output: [10.5, 15.75, 21]
 
 function afterTax(arr, tax) {
-  // TODO YOUR CODE HERE
+  let out = arr.map(a => (a * Math.round(tax + 1)))
+  console.log(out, 'This is the array')
+
+
+  return out
 }
 
 // ---------------------------------------------

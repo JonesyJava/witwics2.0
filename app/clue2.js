@@ -9,8 +9,11 @@
 // input: ['Argentina', 'Armenia', 'Aruba', 'Australia', 'Austria'], 'Australia'
 // output: 4
 
+
+
 function returnIndex(arr, str) {
-  // TODO your code here
+  let out = arr.indexOf(str)
+  return out
 }
 
 //-------------------------------------------
@@ -23,7 +26,11 @@ function returnIndex(arr, str) {
 // output: true
 
 function hasName(arr, name) {
-  // TODO your code here
+  if(arr.includes(name)){
+    return true
+  } else {
+    return false
+  }
 }
 
 //-------------------------------------------
@@ -43,7 +50,11 @@ let staff = [{ id: 1, name: 'Jon' }, { id: 2, name: 'Yuli' }, { id: 21, name: 'P
 { id: 881, name: 'Paul' }, { id: 0, name: 'Jon' }, { id: 999, name: 'Timma' }]
 
 function findById(id) {
-  // TODO YOUR CODE HERE
+  let staffObj = staff.find(staff => staff.id == id)
+  if (!staffObj){
+      return { error: "No user with that id." }
+  }
+      return staffObj
 }
 
 //-------------------------------------------
@@ -70,7 +81,15 @@ let theBand = {
 }
 
 function bandMemberDetails(name) {
-  // TODO YOUR CODE HERE
+  let bandString = ''
+  let found = theBand.members.find(n => n.name.includes(name))
+  return bandString += `${found.name} is in the band and plays the ${found.instrument}`
+  // for(let i = 0; i < theBand.members.length; i++) {
+  //   let bandMember = theBand.members[i]
+  //   if (bandMember.name.includes(name)){
+  //       return `${bandMember.name} is in the band and plays the ${bandMember.instrument}`
+  //   }
+  // }
 }
 
 //-------------------------------------------
@@ -106,5 +125,20 @@ let flights = [{
 }]
 
 function flightCost(destination, firstClass) {
-  // TODO YOUR CODE HERE
+  // for (let i = 0; i < flights.length; i++) {
+  //   if (destination.toUpperCase() == flights[i].to) {
+  //       if (firstClass == true) {
+  //           return flights[i].prices.firstClass
+ 
+  //       } else {
+  //           return flights[i].prices.standard
+  //       }
+  //   }    
+  // }
+  let foundFlight = flights.find(f => f.to == destination)
+  if(firstClass){
+    return foundFlight.prices.firstClass
+  } else {
+    return foundFlight.prices.standard
+  }
 }
